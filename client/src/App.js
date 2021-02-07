@@ -1,10 +1,10 @@
-import Meme from "./components/meme/Meme.jsx";
+import MemeForm from "./components/memeForm/memeForm";
 
 
 function App() {
   return (
     <div>
-      <Meme />
+      <MemeForm />
     </div>
   );
 }
