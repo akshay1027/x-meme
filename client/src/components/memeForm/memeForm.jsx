@@ -1,7 +1,7 @@
-import {Form, Button} from "react-bootstrap"
+import {Form, Button, Toast} from "react-bootstrap"
 import React from "react";
 import {useState} from 'react';
-import axios from "../helper/axiosHelper";
+import axios from "../../helper/axiosHelper";
 
 import { Container, Row, Col } from "react-bootstrap";
 import "../memeForm/memeForm.css"
@@ -12,23 +12,44 @@ const MemeForm = () => {
     const [name, setName] = useState("");
     const [url, setUrl] = useState("");
     const [caption, setCaption] = useState("");
+    const [err, setErr] = useState("");
     
     // function to send data
     const handleClick = async() =>{
+        
+        try{
+            if(url==="" || caption==="" || name===""){
+                throw 'err';
+            }
+            await axios.post('memes', {
+                    name, url, caption
+            });
+            window.location.reload();
+        }
+        catch(e) {
+            if(e==='err'){
+                setErr("Please provide proper input");
+            }
+            setTimeout(()=>{
+                setErr("")
+            }, 2000)
+            return;
+        }
+    }
 
-        // post http request using axios to /memes
+        /*// post http request using axios to /memes
         await axios.post('memes', {
             name, caption, url
         }); 
-
+        
         //to reload website
         window.location.reload(); 
     }
-
+ */
 return (
 
 <Container>
-      <Row className="">
+      <Row>
         <Col xs={12} md={6} lg={8}>
         <br />
         <h1>Xmeme</h1>
@@ -71,7 +92,9 @@ return (
         </Form>
 
         <Button className="btn btn-primary" onClick={handleClick}>Submit</Button>
-
+        <Toast show={err!==""} onClose={()=>setErr("")} style={{position: "absolute", height: "40px", top:"40px", right:"0", backgroundColor:'rgba(255,0, 0, 0.5)', zIndex:1000}}>
+                <Toast.Body>{err}</Toast.Body>
+        </Toast>
         </Col>
       </Row>
 </Container>
