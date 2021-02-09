@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
 import axios from "../../helper/axiosHelper";
-import Card from "../mainpage/mainpage";
+import Card from "../mainpage/card";
 
 function GetMemes() {
     const [memes, setMemes] = useState([]);
