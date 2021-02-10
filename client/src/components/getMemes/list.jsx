@@ -16,11 +16,11 @@ function GetMemes() {
     },[])
     return (
         <div>
-                <div>
-                    {memes.map((meme) => (
-                        <Card Name={meme.name} caption={meme.caption} url={meme.url} id={meme.id}/>
-                    ))}
-                </div>
+            <div>
+                {memes.map((meme) => (
+                    <Card Name={meme.name} caption={meme.caption} url={meme.url} id={meme.id}/>
+                ))}
+            </div>
         </div>
     )
 }
