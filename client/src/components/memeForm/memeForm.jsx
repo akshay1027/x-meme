@@ -4,7 +4,7 @@ import {useState} from 'react';
 import axios from "../../helper/axiosHelper";
 
 import { Container, Row, Col } from "react-bootstrap";
-import "../memeForm/memeForm.css"
+
 
 const MemeForm = () => {
     
@@ -57,7 +57,7 @@ return (
         
         <Form>
         <Form.Group controlId="exampleForm.ControlInput1">
-            <Form.Label className="form-label">Name</Form.Label>
+            <Form.Label size="lg">Name</Form.Label>
             <br />
             <Form.Control type="search" placeholder="Enter Name" size="lg" 
              onChange={(e)=>setName(e.target.value)} 
@@ -69,7 +69,7 @@ return (
         
         <Form>
         <Form.Group controlId="exampleForm.ControlInput1">
-            <Form.Label className="form-label">Caption</Form.Label>
+            <Form.Label size="lg">Caption</Form.Label>
             <br />
             <Form.Control type="search" placeholder="Enter Caption" size="lg" 
              onChange={(e)=>setCaption(e.target.value)} 
@@ -81,7 +81,7 @@ return (
         
         <Form>
         <Form.Group controlId="exampleForm.ControlInput1">
-            <Form.Label className="form-label">URL</Form.Label>
+            <Form.Label size="lg">URL</Form.Label>
             <br />
             <Form.Control type="search" placeholder="Enter URL" size="lg" 
              onChange={(e)=>setUrl(e.target.value)} 
@@ -103,13 +103,3 @@ return (
 }
 
 export default MemeForm;
-
-
-   /* <Form className="form-inline my-2 my-lg-0" style={{position: "absolute", right:"5px", backgroundColor:"white", padding:"5px"}}>
-        <FormControl className="form-control mr-sm-2" type="search" placeholder="Name" aria-label="Search" onChange={(e)=>setName(e.target.value)} value={name} />
-        <FormControl className="form-control mr-sm-2" type="search" placeholder="URL" aria-label="URL" onChange={(e)=>setUrl(e.target.value)} value={url} />
-        <FormControl className="form-control mr-sm-2" type="search" placeholder="Caption" aria-label="Caption" onChange={(e)=>setCaption(e.target.value)} value={caption} />
-        <Button className="btn btn-primary" onClick={handleSubmit} style={{margin: "5px"}}>Submit</Button>
-    </Form>
-
-    */
