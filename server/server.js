@@ -12,8 +12,8 @@ const defaultData = {
     memes: [
         {
             id: 0,
-            caption: 'caption',
-            name: 'name1',
+            caption: 'wow',
+            name: 'akshay',
             url: 'https://static.mommypoppins.com/styles/image620x420/s3/school_meme_3_0.jpg'
         },
     ],
@@ -48,11 +48,13 @@ app.post("/memes", (req, res) => {
         caption: caption,
         url: url
     }).write();
-    
-    res.redirect("/")
 
 })
 
+app.get('/memes', function(req, res) {
+    const data = db.get("memes").value();
+    res.send(data);
+  })
 
 app.listen(8080, function () {
     console.log('listening on 8080');
