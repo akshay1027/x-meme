@@ -7,7 +7,7 @@ function GetMemes() {
     useEffect(()=>{
         const init = async() => {
             // get http request using axios
-            let res = await axios.get('/memes');
+            let res = await axios.get('http://localhost:8080/memes');
             res = await res.data;
             setMemes(res);
         }
@@ -16,7 +16,7 @@ function GetMemes() {
     },[])
     return (
         <div>
-                <div className="d-flex flex-row flex-wrap justify-content-sm-around">
+                <div>
                     {memes.map((meme) => (
                         <Card Name={meme.name} caption={meme.caption} url={meme.url} id={meme.id}/>
                     ))}

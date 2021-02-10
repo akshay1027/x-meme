@@ -21,7 +21,7 @@ const MemeForm = () => {
             if(url==="" || caption==="" || name===""){
                 throw 'err';
             }
-            await axios.post('memes', {
+            await axios.post('http://localhost:8080/memes', {
                     name, url, caption
             });
             window.location.reload();
@@ -92,7 +92,7 @@ return (
         </Form>
 
         <Button className="btn btn-primary" onClick={handleClick}>Submit</Button>
-        <Toast show={err!==""} onClose={()=>setErr("")} style={{position: "absolute", height: "40px", top:"40px", right:"0", backgroundColor:'rgba(255,0, 0, 0.5)', zIndex:1000}}>
+        <Toast show={err!==""} onClose={()=>setErr("")} style={{position: "absolute", zIndex:1000}}>
                 <Toast.Body>{err}</Toast.Body>
         </Toast>
         </Col>
