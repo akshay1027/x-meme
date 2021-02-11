@@ -1,12 +1,16 @@
 import { useState } from 'react';
 import axios from "../../helper/axiosHelper";
+import { Container, Row, Col } from "react-bootstrap";
 
 // card page
 
 function MainPage(props) {
 
     return (
-        <div className="card rounded border-warning rounded p-10 xl=6 lg=6" 
+    <Container>
+      <Row>
+        <Col xs={12} md={10} lg={10}></Col>
+        <div className="card rounded border-info rounded" 
         style={{width: "20rem", margin:"20px" }}>
             <div className="card-body">
                     <div>
@@ -17,6 +21,8 @@ function MainPage(props) {
             </div>
             <img src={props.url} alt={props.caption} className="card-img-top" />
         </div>
+      </Row>
+    </Container>
     )
 }
 
