@@ -57,10 +57,10 @@ app.post("/memes", (req, res) => {
 });
 
 app.get("/memes", function (req, res) {
-  const data = db.get("memes").value();
+  const data = db.get("memes").slice(0, 100).value();
   res.send(data);
 });
 
-app.listen(8080, function () {
-  console.log("listening on 8080");
+app.listen(8081, function () {
+  console.log("listening on 8081");
 });
