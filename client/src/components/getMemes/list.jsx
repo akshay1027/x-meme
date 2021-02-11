@@ -7,7 +7,7 @@ function GetMemes() {
     useEffect(()=>{
         const init = async() => {
             // get http request using axios
-            let res = await axios.get('http://localhost:8080/memes');
+            let res = await axios.get('http://localhost:8081/memes');
             res = await res.data;
             setMemes(res);
         }
