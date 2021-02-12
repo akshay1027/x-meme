@@ -28,7 +28,7 @@ const MemeForm = () => {
         }
         catch(e) {
             if(e==='err'){
-                setErr("Please provide proper input");
+                setErr("Please submit valid input");
             }
             setTimeout(()=>{
                 setErr("")
@@ -55,7 +55,7 @@ return (
         <h1>Xmeme</h1>
         <br />
         <br />
-        <Toast show={err!==""} onClose={()=>setErr("")} style={{position: "absolute", zIndex:1000, backgroundColor:"crimson", color:'white', marginTop:"-50px"}}>
+        <Toast show={err!==""} onClose={()=>setErr("")} style={{position: "absolute", zIndex:999, backgroundColor:"crimson", color:'white', marginTop:"-50px"}}>
                 <Toast.Body>{err}</Toast.Body>
         </Toast>
         <Form>
