@@ -12,14 +12,14 @@ const MemeForm = () => {
     const [name, setName] = useState("");
     const [url, setUrl] = useState("");
     const [caption, setCaption] = useState("");
-    const [err, setErr] = useState("");
+    const [error, setError] = useState("");
     
     // function to send data
     const handleClick = async() =>{
         
         try{
             if(url==="" || caption==="" || name===""){
-                throw 'err';
+                throw 'error';
             }
             await axios.post('http://localhost:8081/memes', {
                     name, url, caption
@@ -27,11 +27,11 @@ const MemeForm = () => {
             window.location.reload();
         }
         catch(e) {
-            if(e==='err'){
-                setErr("Please submit valid input");
+            if(e==='error'){
+                setError("Please submit valid input");
             }
             setTimeout(()=>{
-                setErr("")
+                setError("")
             }, 2000)
             return;
         }
@@ -52,11 +52,11 @@ return (
       <Row>
         <Col xs={12} md={6} lg={8}>
         <br />
-        <h1>Xmeme</h1>
+        <h1>Meme Stream</h1>
         <br />
         <br />
-        <Toast show={err!==""} onClose={()=>setErr("")} style={{position: "absolute", zIndex:999, backgroundColor:"crimson", color:'white', marginTop:"-50px"}}>
-                <Toast.Body>{err}</Toast.Body>
+        <Toast show={error!==""} onClose={()=>setError("")} style={{position: "absolute", zIndex:999, backgroundColor:"crimson", color:'white', marginTop:"-50px"}}>
+                <Toast.Body>{error}</Toast.Body>
         </Toast>
         <Form>
         <Form.Group controlId="exampleForm.ControlInput1">
