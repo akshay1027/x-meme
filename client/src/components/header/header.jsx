@@ -5,7 +5,7 @@ const Header = () => {
 
     return (
 
-            <Navbar bg="info" sticky="top">
+            <Navbar bg="primary" sticky="top">
             <Navbar.Brand style={{color: "white", fontSize:"30px"}}>XMEME</Navbar.Brand>
             </Navbar>
         );

@@ -94,7 +94,7 @@ return (
         </Form.Group>
         </Form>
 
-        <Button className="btn btn-primary" onClick={handleClick}>Submit</Button>
+        <Button className="btn btn-primary" onClick={handleClick} style={{marginBottom:"27px"}}>Submit</Button>
         </Col>
       </Row>
 </Container>

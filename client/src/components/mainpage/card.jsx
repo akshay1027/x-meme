@@ -10,8 +10,9 @@ function MainPage(props) {
     <Container>
       <Row>
         <Col xs={12} md={10} lg={10}></Col>
-        <div className="card rounded border-info rounded" 
-        style={{width: "20rem", margin:"20px", padding:"12px"}}>
+        <div className="card rounded rounded" 
+        style={{width: "20rem", margin:"20px", padding:"12px", boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)"
+    }}>
             <div className="card-body">
                     <div>
                         <h6>{props.Name}</h6>
