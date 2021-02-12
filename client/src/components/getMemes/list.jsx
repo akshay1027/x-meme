@@ -7,7 +7,7 @@ function GetMemes() {
   useEffect(() => {
     const server1 =
       process.env.NODE_ENV === "production"
-        ? process.env.LINK
+        ? "https://akshayrr-xmeme.herokuapp.com/"
         : "http://localhost:8081/memes";
     const init = async () => {
       // get http request using axios
