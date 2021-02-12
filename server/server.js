@@ -63,6 +63,8 @@ app.get("/memes", function (req, res) {
   res.send(data);
 });
 
-app.listen(process.env.PORT, function () {
-  console.log(`listening on ${process.env.PORT}`);
+const port = process.env.PORT || 8081
+
+app.listen(port, function () {
+  console.log(`listening on ${port}`);
 });
