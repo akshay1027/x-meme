@@ -4,6 +4,9 @@ const logger = require("morgan");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const FileSync = require("lowdb/adapters/FileSync");
+const dotenv = require('dotenv')
+
+dotenv.config()
 
 // low db
 const adapter = new FileSync("db.json");
@@ -28,10 +31,7 @@ const app = express();
 app.use(bodyParser.json());
 
 app.use(
-  cors({
-    origin: "http://localhost:3000",
-    credentials: true,
-  })
+  cors()
 );
 
 app.use(logger("dev"));
@@ -63,6 +63,6 @@ app.get("/memes", function (req, res) {
   res.send(data);
 });
 
-app.listen(8081, function () {
-  console.log("listening on 8081");
+app.listen(process.env.PORT, function () {
+  console.log(`listening on ${process.env.PORT}`);
 });
