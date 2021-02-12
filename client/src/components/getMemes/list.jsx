@@ -19,7 +19,7 @@ function GetMemes() {
             <div>
                 {memes.map((meme) => (
                     <Card Name={meme.name} caption={meme.caption} url={meme.url} id={meme.id}/>
-                ))}
+                )).reverse()}
             </div>
         </div>
     )
