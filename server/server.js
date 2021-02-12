@@ -40,7 +40,7 @@ app.post("/memes", (req, res) => {
   const name = req.body.name;
   const caption = req.body.caption;
   const url = req.body.url;
-
+  
   const lastMeme = db.get("memes").takeRight(1).value()[0];
   console.log(lastMeme);
   const nextId = lastMeme.id + 1;
@@ -56,8 +56,10 @@ app.post("/memes", (req, res) => {
   res.json({ id: nextId });
 });
 
+// getting latest 100 memes
+
 app.get("/memes", function (req, res) {
-  const data = db.get("memes").slice(0, 100).value();
+  const data = db.get("memes").slice(db.length - 101).value();
   res.send(data);
 });
 
