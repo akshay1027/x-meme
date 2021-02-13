@@ -24,7 +24,7 @@ const MemeForm = () => {
     const handleClick = async() =>{
         
         const server1 = process.env.NODE_ENV === "production"
-        ? "https://akshayrr-xmeme.herokuapp.com/"
+        ? "https://akshayrr-xmeme.herokuapp.com/memes"
         : "http://localhost:8081/memes";
 
         try{
