@@ -1,3 +1,5 @@
+// backend URL= https://akshayrr-xmeme.herokuapp.com/
+
 const express = require("express");
 const low = require("lowdb");
 const logger = require("morgan");
@@ -26,7 +28,6 @@ const defaultData = {
 
 db.defaults(defaultData).write();
 
-// express
 const app = express();
 app.use(bodyParser.json());
 
@@ -35,6 +36,12 @@ app.use(
 );
 
 app.use(logger("dev"));
+
+//express
+
+app.get("/", function (req, res) {
+    res.send("hello from server");
+  });
 
 app.post("/memes", (req, res) => {
   const name = req.body.name;
