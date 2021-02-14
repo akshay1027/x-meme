@@ -30,7 +30,7 @@ function GetMemes() {
               id={meme.id}
             />
           ))
-          .reverse()}
+          }
       </div>
     </div>
   );
