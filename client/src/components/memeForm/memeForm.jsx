@@ -31,6 +31,11 @@ const MemeForm = () => {
             if(url==="" || caption==="" || name===""){
                 throw 'error';
             }
+            
+            if(!url.includes("jpg") && !url.includes("jpeg") && !url.includes("png")){
+                throw 'error';
+            }
+            
             await axios.post(server1, {
                     name, url, caption
             });
