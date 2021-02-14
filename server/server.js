@@ -64,9 +64,11 @@ app.post("/memes", (req, res) => {
 // memes by id
 
 app.get("/memes/:id", function (req, res) {
-    let id1 = req.params.id;
-    let uniqueData = db.get("memes").find({ id: id1 }).value();
-    res.send(uniqueData);
+  let id1 = Number(req.params.id);
+  console.log(id1);
+  let uniqueData = db.get("memes").find({ id: id1 }).value();
+  console.log(uniqueData);
+  res.send(uniqueData);
 });
 
 // getting latest 100 memes
