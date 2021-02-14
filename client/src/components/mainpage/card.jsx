@@ -19,7 +19,7 @@ function MainPage(props) {
                         <h5><strong>{props.caption}</strong></h5>
                     </div>
             </div>
-            <img src={props.url} alt={props.caption} className="card-img-top" />
+            <img src={props.url} alt={props.caption} className="card-img-top" loading="lazy"/>
         </div>
       </Row>
     </Container>
