@@ -61,6 +61,14 @@ app.post("/memes", (req, res) => {
   res.json({ id: nextId });
 });
 
+// memes by id
+
+app.get("/memes/:id", function (req, res) {
+    let id1 = req.params.id;
+    let uniqueData = db.get("memes").find({ id: id1 }).value();
+    res.send(uniqueData);
+});
+
 // getting latest 100 memes
 
 app.get("/memes", function (req, res) {
