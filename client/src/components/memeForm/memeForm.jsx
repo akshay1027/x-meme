@@ -42,7 +42,7 @@ const MemeForm = () => {
             }
             setTimeout(()=>{
                 setError("")
-            }, 2000)
+            }, 3000)
             return;
         }
     }
