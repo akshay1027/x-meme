@@ -2,14 +2,10 @@ import {Form, Button, Toast} from "react-bootstrap"
 import React from "react";
 import {useState} from 'react';
 import axios from "../../helper/axiosHelper";
-
-
 import { Container, Row, Col } from "react-bootstrap";
 const dotenv = require('dotenv')
 
 dotenv.config()
-
-
 
 const MemeForm = () => {
     
@@ -18,24 +14,26 @@ const MemeForm = () => {
     const [url, setUrl] = useState("");
     const [caption, setCaption] = useState("");
     const [error, setError] = useState("");
-    
 
-    // function to send data
+    // function to send data and handle error
+
     const handleClick = async() =>{
         
         const server1 = process.env.NODE_ENV === "production"
-        ? "https://akshayrr-xmeme.herokuapp.com/memes"
+        ? "https://akshayrr-xmeme.herokuapp.com/"
         : "http://localhost:8081/memes";
 
         try{
             if(url==="" || caption==="" || name===""){
                 throw 'error';
             }
-            
+
             if(!url.includes("jpg") && !url.includes("jpeg") && !url.includes("png")){
                 throw 'error';
             }
             
+            // post http request using axios to /memes
+
             await axios.post(server1, {
                     name, url, caption
             });
@@ -45,6 +43,9 @@ const MemeForm = () => {
             if(e==='error'){
                 setError("Please submit valid input");
             }
+
+            // pop-down or vanish effect of error message
+
             setTimeout(()=>{
                 setError("")
             }, 3000)
@@ -52,15 +53,6 @@ const MemeForm = () => {
         }
     }
 
-        /*// post http request using axios to /memes
-        await axios.post('memes', {
-            name, caption, url
-        }); 
-        
-        //to reload website
-        window.location.reload(); 
-    }
- */
 return (
 
 <Container>
