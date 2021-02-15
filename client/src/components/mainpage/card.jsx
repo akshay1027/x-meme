@@ -1,5 +1,3 @@
-
-import axios from "../../helper/axiosHelper";
 import { Container, Row, Col } from "react-bootstrap";
 
 // card page
@@ -27,5 +25,6 @@ function MainPage(props) {
 }
 
 export default MainPage;
+
 
   
