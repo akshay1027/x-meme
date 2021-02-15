@@ -3,21 +3,29 @@ import axios from "../../helper/axiosHelper";
 import Card from "../mainpage/card";
 
 function GetMemes() {
+
+  //state management
+
   const [memes, setMemes] = useState([]);
+
+  // get and and then store is res, used axios get request, async await and state
+
   useEffect(() => {
     const server1 =
       process.env.NODE_ENV === "production"
-        ? "https://akshayrr-xmeme.herokuapp.com/memes"
+        ? "https://akshayrr-xmeme.herokuapp.com/"
         : "http://localhost:8081/memes";
     const init = async () => {
+
       // get http request using axios
+
       let res = await axios.get(server1);
       res = await res.data;
       setMemes(res);
     };
-    console.log("get request");
     init();
   }, []);
+
   return (
     <div>
       <div>
@@ -30,7 +38,7 @@ function GetMemes() {
               id={meme.id}
             />
           ))
-          }
+         }
       </div>
     </div>
   );
