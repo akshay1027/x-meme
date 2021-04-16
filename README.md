@@ -5,7 +5,7 @@
 
 <a href="https://blog.logrocket.com/forms-in-react-in-2020/" target="_blank">low DB turtorial</a>
 
-##IDEAS DISCUSSED SO FAR:
+## IDEAS DISCUSSED SO FAR:
 
 - [ ] Pagination for Memes  
 
