@@ -1,11 +1,17 @@
-## Xmeme website, A full stack application for crio.do stage 2 phase B! 
-### 1 among 500 who got selected out 1000 and finished the final Full stack application in 8 days!
+# Xmeme website, A full stack meme sharing application for crio.do stage 2 phase B! 
+## 1 among 500 who got selected out 1000 and finished the final Full stack application in 8 days!
 
-<a href="https://www.youtube.com/watch?v=eiSem0cqaN0" target="_blank">swagger ui turtorial</a>
+## FEATURES:
++ Users will post Memes by providing these inputs :
+  - Name of the person posting the meme  
+  - Caption for the Meme  
+  - URL of the Meme image
++ Users will view the latest 100 memes posted.  
++ Latest meme displayed first.
++ Backend follows REST architecture.
++ Swagger-UI for API Documentation.  
 
-<a href="https://blog.logrocket.com/forms-in-react-in-2020/" target="_blank">low DB turtorial</a>
-
-## IDEAS DISCUSSED SO FAR:
+## IDEAS THAT CAN BE IMPLEMENTED :
 
 - [ ] Pagination for Memes  
 
@@ -32,3 +38,7 @@
 - [ ] Convert App to a PWA for Offline Use with Offline Create, Update Support  
 
 - [ ] Server-Sent Events for Real-Time Updates  
+
+<a href="https://www.youtube.com/watch?v=eiSem0cqaN0" target="_blank">swagger ui turtorial</a>
+
+<a href="https://blog.logrocket.com/forms-in-react-in-2020/" target="_blank">low DB turtorial</a>
